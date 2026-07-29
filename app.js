@@ -1,6 +1,46 @@
+/* LUNO PROMPT ARCHIVE
+   画像の見切れ調整は IMAGE_POSITIONS の数値だけ変更してください。
+   書式: "画像パス": "横位置% 縦位置%"
+   例: "images/sweet_11_female.jpg": "50% 20%"
+*/
+
+const IMAGE_POSITIONS = {
+  "images/sweet_01_female.jpg": "50% 35%",
+  "images/sweet_01_male.jpg": "50% 30%",
+  "images/sweet_04_female.jpg": "50% 28%",
+  "images/sweet_07_female.jpg": "50% 30%",
+  "images/sweet_07_male.jpg": "50% 28%",
+  "images/sweet_11_female.jpg": "50% 18%", // 金平糖：顔・羽を上寄りに表示
+  "images/sweet_11_male.jpg": "50% 22%",
+  "images/sweet_13_female.jpg": "50% 28%",
+  "images/sweet_13_male.jpg": "50% 28%",
+  "images/sweet_14_female.jpg": "50% 30%",
+  "images/sweet_18_female.jpg": "50% 28%",
+  "images/sweet_18_male.jpg": "50% 28%"
+};
 
 let currentItem = null;
 let currentGender = "single";
+
+function normalizeImagePath(path){
+  if(!path) return "";
+  try{
+    return decodeURIComponent(path).replace(/^.*\/(images\/)/, "$1");
+  }catch(error){
+    return path.replace(/^.*\/(images\/)/, "$1");
+  }
+}
+
+function getImagePosition(path){
+  return IMAGE_POSITIONS[normalizeImagePath(path)] || "50% 50%";
+}
+
+function applyGalleryImagePositions(){
+  document.querySelectorAll(".tile-visual img").forEach(img => {
+    const path = img.getAttribute("src") || "";
+    img.style.objectPosition = getImagePosition(path);
+  });
+}
 
 function openPrompt(button){
   currentItem = JSON.parse(button.dataset.prompt);
@@ -35,9 +75,11 @@ function updateModal(){
   const img = document.getElementById("modalImage");
   if(image){
     img.src = image;
+    img.style.objectPosition = getImagePosition(image);
     img.style.display = "block";
   }else{
     img.removeAttribute("src");
+    img.style.removeProperty("object-position");
     img.style.display = "none";
   }
 }
@@ -74,6 +116,8 @@ function filterTiles(input){
   });
   document.getElementById("emptyState").style.display = visible ? "none" : "block";
 }
+
+document.addEventListener("DOMContentLoaded", applyGalleryImagePositions);
 
 document.addEventListener("keydown", event => {
   if(event.key === "Escape") closePrompt();
