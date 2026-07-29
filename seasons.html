@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3eee8">
+<title>四季の花ドレス | Luno</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="shell">
+<header class="site-head">
+  <a class="brand" href="index.html">LUNO</a>
+  <a class="head-link" href="index.html">COLLECTIONS</a>
+</header>
+
+<a class="back" href="index.html">Collections</a>
+<section class="collection-hero"><span class="eyebrow">Four Seasons Collection</span><h1>四季の花ドレス</h1><p>花びらや雪華がそのままスカートになる、春夏秋冬の幻想シリーズ。</p></section>
+<div class="toolbar"><input class="search" type="search" placeholder="タイトル・雰囲気から検索" oninput="filterTiles(this)"></div>
+<section class="gallery"><button class="prompt-tile" data-search="春 ― 桜と藤のフェアリードレス Spring / Sakura / Wisteria spring flower dress, sakura petals, wisteria flowers, pastel pink and lavender, milk white and pale blue accents, elegant high neck lace collar, long sheer chiffon sleeves, frilled cuffs, modest princess dress, softly flared tiered floral skirt, layered sakura petals and hanging wisteria decorations, delicate embroidery, ribbon-braided half-up hairstyle, soft sunlight, floating petals, dreamy atmosphere, garden background" data-prompt="{&quot;title&quot;: &quot;春 ― 桜と藤のフェアリードレス&quot;, &quot;tag&quot;: &quot;Spring / Sakura / Wisteria&quot;, &quot;prompt&quot;: &quot;spring flower dress, sakura petals, wisteria flowers, pastel pink and lavender, milk white and pale blue accents, elegant high neck lace collar, long sheer chiffon sleeves, frilled cuffs, modest princess dress, softly flared tiered floral skirt, layered sakura petals and hanging wisteria decorations, delicate embroidery, ribbon-braided half-up hairstyle, soft sunlight, floating petals, dreamy atmosphere, garden background&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder spring-bg"><span>01</span></div></div>
+      <div class="tile-title">春 ― 桜と藤のフェアリードレス</div>
+      <div class="tile-tag">Spring / Sakura / Wisteria</div>
+    </button><button class="prompt-tile" data-search="夏 ― 紫陽花と星空のドレス Summer / Hydrangea / Stars hydrangea flower dress, summer fantasy, elegant sheer lace high collar, modest design, airy three-quarter sleeves, layered hydrangea petal skirt, translucent organza, sparkling star bead embroidery, pastel ice blue and lilac, silver and white accents, rainy season atmosphere, glowing particles, floral garden after the rain, soft lighting" data-prompt="{&quot;title&quot;: &quot;夏 ― 紫陽花と星空のドレス&quot;, &quot;tag&quot;: &quot;Summer / Hydrangea / Stars&quot;, &quot;prompt&quot;: &quot;hydrangea flower dress, summer fantasy, elegant sheer lace high collar, modest design, airy three-quarter sleeves, layered hydrangea petal skirt, translucent organza, sparkling star bead embroidery, pastel ice blue and lilac, silver and white accents, rainy season atmosphere, glowing particles, floral garden after the rain, soft lighting&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder summer-bg"><span>02</span></div></div>
+      <div class="tile-title">夏 ― 紫陽花と星空のドレス</div>
+      <div class="tile-tag">Summer / Hydrangea / Stars</div>
+    </button><button class="prompt-tile" data-search="秋 ― 金木犀と紅葉のドレス Autumn / Osmanthus / Maple autumn fairy dress, layered maple leaf skirt, osmanthus flower embroidery, elegant classical stand collar, long bell sleeves, modest vintage dress, velvet ribbon accents, warm amber, orange gold, burgundy and cream palette, golden sunset, falling leaves, sophisticated fantasy fashion, delicate lace, autumn garden background" data-prompt="{&quot;title&quot;: &quot;秋 ― 金木犀と紅葉のドレス&quot;, &quot;tag&quot;: &quot;Autumn / Osmanthus / Maple&quot;, &quot;prompt&quot;: &quot;autumn fairy dress, layered maple leaf skirt, osmanthus flower embroidery, elegant classical stand collar, long bell sleeves, modest vintage dress, velvet ribbon accents, warm amber, orange gold, burgundy and cream palette, golden sunset, falling leaves, sophisticated fantasy fashion, delicate lace, autumn garden background&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder autumn-bg"><span>03</span></div></div>
+      <div class="tile-title">秋 ― 金木犀と紅葉のドレス</div>
+      <div class="tile-tag">Autumn / Osmanthus / Maple</div>
+    </button><button class="prompt-tile" data-search="冬 ― 雪華と椿のロイヤルドレス Winter / Camellia / Snowflake winter snowflake dress, camellia flowers, elegant royal high collar, long sleeves with soft fur-trimmed cuffs, modest princess gown, layered snow crystal skirt, cape-like back ribbon, camellia embroidery, snow white and ice blue palette, silver and pale rose accents, sparkling frost, snowy garden, ethereal winter atmosphere" data-prompt="{&quot;title&quot;: &quot;冬 ― 雪華と椿のロイヤルドレス&quot;, &quot;tag&quot;: &quot;Winter / Camellia / Snowflake&quot;, &quot;prompt&quot;: &quot;winter snowflake dress, camellia flowers, elegant royal high collar, long sleeves with soft fur-trimmed cuffs, modest princess gown, layered snow crystal skirt, cape-like back ribbon, camellia embroidery, snow white and ice blue palette, silver and pale rose accents, sparkling frost, snowy garden, ethereal winter atmosphere&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder winter-bg"><span>04</span></div></div>
+      <div class="tile-title">冬 ― 雪華と椿のロイヤルドレス</div>
+      <div class="tile-tag">Winter / Camellia / Snowflake</div>
+    </button></section>
+<div class="empty" id="emptyState">該当するプロンプトがありません。</div>
+
+<footer class="footer">LUNO PROMPT ARCHIVE — PRIVATE COLLECTION</footer>
+</main>
+
+<div class="modal" id="promptModal">
+  <div class="modal-backdrop" onclick="closePrompt()"></div>
+  <section class="modal-sheet">
+    <div class="modal-grip"></div>
+    <button class="modal-close" onclick="closePrompt()" aria-label="閉じる">×</button>
+    <div class="modal-image-wrap"><img class="modal-image" id="modalImage" alt=""></div>
+    <div class="modal-sub" id="modalSub"></div>
+    <h2 id="modalTitle"></h2>
+    <div class="gender-tabs" id="genderTabs"></div>
+    <div class="prompt-box" id="promptText"></div>
+    <button class="copy" id="copyButton" onclick="copyPrompt()">Promptをコピー</button>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

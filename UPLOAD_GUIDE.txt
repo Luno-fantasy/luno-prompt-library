@@ -1,0 +1,26 @@
+Luno Prompt Library 完成版（images/構成）
+
+リポジトリ直下へ置くもの：
+- index.html
+- birthday.html
+- weekend.html
+- seasons.html
+- sweets.html
+- style.css
+- app.js
+- images フォルダ
+
+フォルダ構成：
+index.html
+birthday.html
+weekend.html
+seasons.html
+sweets.html
+style.css
+app.js
+images/
+  sweet_01_female.jpg
+  sweet_01_male.jpg
+  ...
+
+重要：ZIPファイル自体ではなく、展開後の中身をアップロードしてください。

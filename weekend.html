@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3eee8">
+<title>休日・カジュアル | Luno</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="shell">
+<header class="site-head">
+  <a class="brand" href="index.html">LUNO</a>
+  <a class="head-link" href="index.html">COLLECTIONS</a>
+</header>
+
+<a class="back" href="index.html">Collections</a>
+<section class="collection-hero"><span class="eyebrow">Weekend Collection</span><h1>休日・カジュアル</h1><p>気を抜いた自然な服装と仕草。容姿プロンプトへ重ねやすい休日の構図。</p></section>
+<div class="toolbar"><input class="search" type="search" placeholder="タイトル・雰囲気から検索" oninput="filterTiles(this)"></div>
+<section class="gallery"><button class="prompt-tile" data-search="カフェで過ごす休日 Cafe / Knit / Afternoon casual oversized knit, white T-shirt, relaxed straight denim, sneakers, wristwatch, coffee cup, sitting by a cafe window, one arm resting on the table, gentle smile, looking outside, warm afternoon sunlight, candid photography" data-prompt="{&quot;title&quot;: &quot;カフェで過ごす休日&quot;, &quot;tag&quot;: &quot;Cafe / Knit / Afternoon&quot;, &quot;prompt&quot;: &quot;casual oversized knit, white T-shirt, relaxed straight denim, sneakers, wristwatch, coffee cup, sitting by a cafe window, one arm resting on the table, gentle smile, looking outside, warm afternoon sunlight, candid photography&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>01</span></div></div>
+      <div class="tile-title">カフェで過ごす休日</div>
+      <div class="tile-tag">Cafe / Knit / Afternoon</div>
+    </button><button class="prompt-tile" data-search="街歩きデート風 Street / Linen / Walking open collar linen shirt with rolled sleeves, beige slacks, leather sneakers, crossbody bag, walking through a shopping street, hands in pockets, glancing back over the shoulder, relaxed posture, natural daylight, candid shot" data-prompt="{&quot;title&quot;: &quot;街歩きデート風&quot;, &quot;tag&quot;: &quot;Street / Linen / Walking&quot;, &quot;prompt&quot;: &quot;open collar linen shirt with rolled sleeves, beige slacks, leather sneakers, crossbody bag, walking through a shopping street, hands in pockets, glancing back over the shoulder, relaxed posture, natural daylight, candid shot&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>02</span></div></div>
+      <div class="tile-title">街歩きデート風</div>
+      <div class="tile-tag">Street / Linen / Walking</div>
+    </button><button class="prompt-tile" data-search="公園でひと休み Park / Hoodie / Relaxed simple hoodie, black jogger pants, sneakers, sitting on a park bench, stretching one arm across the backrest, crossed legs, soft smile, surrounded by greenery, peaceful afternoon" data-prompt="{&quot;title&quot;: &quot;公園でひと休み&quot;, &quot;tag&quot;: &quot;Park / Hoodie / Relaxed&quot;, &quot;prompt&quot;: &quot;simple hoodie, black jogger pants, sneakers, sitting on a park bench, stretching one arm across the backrest, crossed legs, soft smile, surrounded by greenery, peaceful afternoon&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>03</span></div></div>
+      <div class="tile-title">公園でひと休み</div>
+      <div class="tile-tag">Park / Hoodie / Relaxed</div>
+    </button><button class="prompt-tile" data-search="海辺の休日 Beach / Linen / Golden Hour white linen shirt, light blue shorts, sandals, sunglasses hanging from the collar, standing by the shoreline, ocean breeze moving the clothes, one hand brushing through hair, relaxed expression, golden hour" data-prompt="{&quot;title&quot;: &quot;海辺の休日&quot;, &quot;tag&quot;: &quot;Beach / Linen / Golden Hour&quot;, &quot;prompt&quot;: &quot;white linen shirt, light blue shorts, sandals, sunglasses hanging from the collar, standing by the shoreline, ocean breeze moving the clothes, one hand brushing through hair, relaxed expression, golden hour&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>04</span></div></div>
+      <div class="tile-title">海辺の休日</div>
+      <div class="tile-tag">Beach / Linen / Golden Hour</div>
+    </button><button class="prompt-tile" data-search="本屋巡り Bookstore / Cardigan / Cozy cardigan over a plain T-shirt, dark jeans, tote bag, holding several books, browsing bookshelves, side profile, relaxed stance, cozy bookstore atmosphere, warm indoor lighting" data-prompt="{&quot;title&quot;: &quot;本屋巡り&quot;, &quot;tag&quot;: &quot;Bookstore / Cardigan / Cozy&quot;, &quot;prompt&quot;: &quot;cardigan over a plain T-shirt, dark jeans, tote bag, holding several books, browsing bookshelves, side profile, relaxed stance, cozy bookstore atmosphere, warm indoor lighting&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>05</span></div></div>
+      <div class="tile-title">本屋巡り</div>
+      <div class="tile-tag">Bookstore / Cardigan / Cozy</div>
+    </button><button class="prompt-tile" data-search="家でまったり Home / Lounge / Morning loose sweatshirt, comfortable lounge pants, barefoot, sitting on the sofa, holding a mug, one knee raised, looking toward the window, soft morning light, cozy room" data-prompt="{&quot;title&quot;: &quot;家でまったり&quot;, &quot;tag&quot;: &quot;Home / Lounge / Morning&quot;, &quot;prompt&quot;: &quot;loose sweatshirt, comfortable lounge pants, barefoot, sitting on the sofa, holding a mug, one knee raised, looking toward the window, soft morning light, cozy room&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>06</span></div></div>
+      <div class="tile-title">家でまったり</div>
+      <div class="tile-tag">Home / Lounge / Morning</div>
+    </button><button class="prompt-tile" data-search="ドライブ帰り Drive / Car / Sunset black fitted T-shirt, light jacket tied around the waist, denim pants, sunglasses, leaning against a car, arms loosely crossed, relaxed smile, sunset sky, cinematic composition" data-prompt="{&quot;title&quot;: &quot;ドライブ帰り&quot;, &quot;tag&quot;: &quot;Drive / Car / Sunset&quot;, &quot;prompt&quot;: &quot;black fitted T-shirt, light jacket tied around the waist, denim pants, sunglasses, leaning against a car, arms loosely crossed, relaxed smile, sunset sky, cinematic composition&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>07</span></div></div>
+      <div class="tile-title">ドライブ帰り</div>
+      <div class="tile-tag">Drive / Car / Sunset</div>
+    </button><button class="prompt-tile" data-search="夕方の散歩 Riverside / Walk / Sunset light cardigan, plain T-shirt, tapered pants, sneakers, walking along a riverside path, hands in pockets, looking toward the sunset, gentle breeze, calm atmosphere, candid composition" data-prompt="{&quot;title&quot;: &quot;夕方の散歩&quot;, &quot;tag&quot;: &quot;Riverside / Walk / Sunset&quot;, &quot;prompt&quot;: &quot;light cardigan, plain T-shirt, tapered pants, sneakers, walking along a riverside path, hands in pockets, looking toward the sunset, gentle breeze, calm atmosphere, candid composition&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>08</span></div></div>
+      <div class="tile-title">夕方の散歩</div>
+      <div class="tile-tag">Riverside / Walk / Sunset</div>
+    </button><button class="prompt-tile" data-search="ショッピングモール Mall / Lifestyle / Modern zip-up jacket over a plain shirt, wide slacks, sneakers, shopping bags in one hand, standing beside an escalator, looking at the viewer with a relaxed smile, modern interior, casual lifestyle photography" data-prompt="{&quot;title&quot;: &quot;ショッピングモール&quot;, &quot;tag&quot;: &quot;Mall / Lifestyle / Modern&quot;, &quot;prompt&quot;: &quot;zip-up jacket over a plain shirt, wide slacks, sneakers, shopping bags in one hand, standing beside an escalator, looking at the viewer with a relaxed smile, modern interior, casual lifestyle photography&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>09</span></div></div>
+      <div class="tile-title">ショッピングモール</div>
+      <div class="tile-tag">Mall / Lifestyle / Modern</div>
+    </button><button class="prompt-tile" data-search="待ち合わせ Station / Denim / Daytime casual denim jacket, white T-shirt, black slacks, sneakers, leaning against a station railing, checking a smartphone, one foot slightly forward, natural pose, bright daytime, candid photography" data-prompt="{&quot;title&quot;: &quot;待ち合わせ&quot;, &quot;tag&quot;: &quot;Station / Denim / Daytime&quot;, &quot;prompt&quot;: &quot;casual denim jacket, white T-shirt, black slacks, sneakers, leaning against a station railing, checking a smartphone, one foot slightly forward, natural pose, bright daytime, candid photography&quot;}" onclick="openPrompt(this)">
+      <div class="tile-visual"><div class="placeholder weekend-bg"><span>10</span></div></div>
+      <div class="tile-title">待ち合わせ</div>
+      <div class="tile-tag">Station / Denim / Daytime</div>
+    </button></section>
+<div class="empty" id="emptyState">該当するプロンプトがありません。</div>
+
+<footer class="footer">LUNO PROMPT ARCHIVE — PRIVATE COLLECTION</footer>
+</main>
+
+<div class="modal" id="promptModal">
+  <div class="modal-backdrop" onclick="closePrompt()"></div>
+  <section class="modal-sheet">
+    <div class="modal-grip"></div>
+    <button class="modal-close" onclick="closePrompt()" aria-label="閉じる">×</button>
+    <div class="modal-image-wrap"><img class="modal-image" id="modalImage" alt=""></div>
+    <div class="modal-sub" id="modalSub"></div>
+    <h2 id="modalTitle"></h2>
+    <div class="gender-tabs" id="genderTabs"></div>
+    <div class="prompt-box" id="promptText"></div>
+    <button class="copy" id="copyButton" onclick="copyPrompt()">Promptをコピー</button>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
