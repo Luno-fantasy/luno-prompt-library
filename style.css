@@ -92,3 +92,69 @@ body.lock{overflow:hidden}button,input{font:inherit}a{color:inherit}
   width:100%;border:1px solid var(--line);border-radius:16px;padding:13px;
   background:#f7f2ef;color:var(--wine);font-weight:800;letter-spacing:.04em;margin-top:9px
 }
+
+
+/* Two-column collection index */
+.collections{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.collection-card{
+  min-width:0;
+}
+.collection-card .visual{
+  aspect-ratio:4/5;
+  min-height:0;
+}
+.collection-card .meta{
+  padding:18px 16px 20px;
+}
+.collection-card .meta h2{
+  font-size:clamp(25px,7vw,40px);
+  line-height:1;
+}
+.collection-card .meta p{
+  font-size:10px;
+  letter-spacing:.12em;
+}
+.collection-card .num{
+  font-size:9px;
+}
+.featured-card{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:42% 58%;
+  align-items:stretch;
+}
+.featured-card .visual{
+  aspect-ratio:auto;
+  min-height:220px;
+  border-radius:28px 0 0 28px;
+}
+.featured-card .meta{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  border-radius:0 28px 28px 0;
+}
+.featured-card .meta h2{
+  font-size:clamp(30px,8vw,50px);
+}
+
+@media (max-width:430px){
+  .collections{gap:12px}
+  .collection-card .meta{padding:15px 12px 17px}
+  .collection-card .meta h2{font-size:27px}
+  .collection-card .meta p{font-size:8px;line-height:1.6}
+  .featured-card{
+    grid-template-columns:39% 61%;
+  }
+  .featured-card .visual{
+    min-height:180px;
+  }
+  .featured-card .meta h2{
+    font-size:28px;
+    line-height:1.05;
+  }
+}
