@@ -94,67 +94,66 @@ body.lock{overflow:hidden}button,input{font:inherit}a{color:inherit}
 }
 
 
-/* Two-column collection index */
-.collections{
+/* ===== Top page: compact two-column layout ===== */
+.collection-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-}
-.collection-card{
-  min-width:0;
-}
-.collection-card .visual{
-  aspect-ratio:4/5;
-  min-height:0;
-}
-.collection-card .meta{
-  padding:18px 16px 20px;
-}
-.collection-card .meta h2{
-  font-size:clamp(25px,7vw,40px);
-  line-height:1;
-}
-.collection-card .meta p{
-  font-size:10px;
-  letter-spacing:.12em;
-}
-.collection-card .num{
-  font-size:9px;
-}
-.featured-card{
-  grid-column:1 / -1;
-  display:grid;
-  grid-template-columns:42% 58%;
-  align-items:stretch;
-}
-.featured-card .visual{
-  aspect-ratio:auto;
-  min-height:220px;
-  border-radius:28px 0 0 28px;
-}
-.featured-card .meta{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  border-radius:0 28px 28px 0;
-}
-.featured-card .meta h2{
-  font-size:clamp(30px,8vw,50px);
+  gap:13px;
 }
 
-@media (max-width:430px){
-  .collections{gap:12px}
-  .collection-card .meta{padding:15px 12px 17px}
-  .collection-card .meta h2{font-size:27px}
-  .collection-card .meta p{font-size:8px;line-height:1.6}
-  .featured-card{
-    grid-template-columns:39% 61%;
-  }
-  .featured-card .visual{
-    min-height:180px;
-  }
-  .featured-card .meta h2{
-    font-size:28px;
-    line-height:1.05;
-  }
+.collection-grid .collection-card{
+  min-height:0;
+  height:auto;
+  aspect-ratio:4 / 5;
+  border-radius:24px;
+}
+
+.collection-grid .collection-card .meta{
+  left:15px;
+  right:12px;
+  bottom:15px;
+}
+
+.collection-grid .collection-card .num{
+  font-size:8px;
+  letter-spacing:.11em;
+}
+
+.collection-grid .collection-card h2{
+  font-size:clamp(23px,7vw,34px);
+  margin:5px 0 7px;
+}
+
+.collection-grid .collection-card p{
+  font-size:7px;
+  line-height:1.55;
+  letter-spacing:.09em;
+}
+
+/* Original Characters: wide featured card */
+.collection-grid .featured-card{
+  grid-column:1 / -1;
+  aspect-ratio:2.25 / 1;
+  min-height:175px;
+}
+
+.collection-grid .featured-card .meta{
+  left:22px;
+  right:20px;
+  bottom:19px;
+}
+
+.collection-grid .featured-card h2{
+  font-size:clamp(29px,8vw,43px);
+}
+
+.collection-grid .featured-card p{
+  font-size:8px;
+}
+
+@media (max-width:370px){
+  .collection-grid{gap:10px}
+  .collection-grid .collection-card{border-radius:21px}
+  .collection-grid .collection-card h2{font-size:22px}
+  .collection-grid .collection-card .meta{left:12px;bottom:13px}
 }
