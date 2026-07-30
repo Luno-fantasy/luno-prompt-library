@@ -79,3 +79,16 @@ body.lock{overflow:hidden}button,input{font:inherit}a{color:inherit}
   .gallery{grid-template-columns:repeat(3,1fr);gap:18px}
   .modal-sheet{left:50%;right:auto;bottom:28px;transform:translateX(-50%);width:min(620px,calc(100% - 36px));border-radius:30px;max-height:88vh}
 }
+
+.art-original{
+  background:
+    radial-gradient(circle at 72% 20%,rgba(225,184,116,.34),transparent 27%),
+    radial-gradient(circle at 20% 82%,rgba(126,29,48,.52),transparent 32%),
+    linear-gradient(135deg,#171116,#542331 55%,#b08a55);
+}
+.quality-section{margin-top:12px}
+.quality-label{font-size:8px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin:0 0 7px 3px}
+.copy-secondary{
+  width:100%;border:1px solid var(--line);border-radius:16px;padding:13px;
+  background:#f7f2ef;color:var(--wine);font-weight:800;letter-spacing:.04em;margin-top:9px
+}
