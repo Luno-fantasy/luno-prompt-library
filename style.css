@@ -178,10 +178,3 @@ body.lock{overflow:hidden}button,input{font:inherit}a{color:inherit}
     aspect-ratio:1.95 / 1;
   }
 }
-
-
-.art-idol{background:radial-gradient(circle at 72% 22%,rgba(250,220,190,.32),transparent 24%),radial-gradient(circle at 22% 24%,rgba(188,170,225,.32),transparent 28%),linear-gradient(135deg,#4d394d,#b38476)}
-.idol-bg{background:linear-gradient(145deg,#7b6a8d,#e0b7a5)}
-.idol-bg-1{background:linear-gradient(145deg,#6b667f,#d9b3a4)}
-.idol-bg-2{background:linear-gradient(145deg,#5d6d82,#c79c88)}
-.idol-bg-3{background:linear-gradient(145deg,#7c5a73,#d7b6a1)}
