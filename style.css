@@ -178,15 +178,3 @@ body.lock{overflow:hidden}button,input{font:inherit}a{color:inherit}
     aspect-ratio:1.95 / 1;
   }
 }
-
-
-.art-idol{background:radial-gradient(circle at 72% 23%,rgba(255,218,183,.45),transparent 22%),radial-gradient(circle at 28% 26%,rgba(216,154,190,.42),transparent 28%),linear-gradient(135deg,#4f3244,#b68e79)}
-.art-gothic{background:radial-gradient(circle at 78% 18%,rgba(203,61,99,.28),transparent 24%),radial-gradient(circle at 18% 82%,rgba(88,55,107,.36),transparent 32%),linear-gradient(135deg,#160f17,#4a2739 52%,#9e7b64)}
-.idol-bg{background:linear-gradient(145deg,#7a4e65,#c9a78e)}
-.idol-bg-1{background:linear-gradient(145deg,#66546e,#d0b8a0)}
-.idol-bg-2{background:linear-gradient(145deg,#5b6865,#c9a47f)}
-.idol-bg-3{background:linear-gradient(145deg,#74485c,#8ea3b7)}
-.gothic-bg{background:linear-gradient(145deg,#1b131d,#7d4b63)}
-.gothic-bg-1{background:linear-gradient(145deg,#281a2c,#915267)}
-.gothic-bg-2{background:linear-gradient(145deg,#120d15,#6e5065)}
-.gothic-bg-3{background:linear-gradient(145deg,#261723,#a07263)}
