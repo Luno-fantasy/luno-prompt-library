@@ -59,6 +59,18 @@ function updateModal(){
       qualitySection.style.display = "none";
     }
   }
+
+  const negativeSection = document.getElementById("negativeSection");
+  const negativeText = document.getElementById("negativeText");
+  if(negativeSection && negativeText){
+    if(currentItem.negativeTags){
+      negativeText.textContent = currentItem.negativeTags;
+      negativeSection.style.display = "block";
+    }else{
+      negativeText.textContent = "";
+      negativeSection.style.display = "none";
+    }
+  }
 }
 
 function closePrompt(){
@@ -110,3 +122,11 @@ function filterTiles(input){
 document.addEventListener("keydown", event => {
   if(event.key === "Escape") closePrompt();
 });
+
+async function copyNegativeTags(){
+  const text = document.getElementById("negativeText").textContent;
+  const button = document.getElementById("negativeCopyButton");
+  await writeClipboard(text);
+  button.textContent = "Copied ✓";
+  setTimeout(() => button.textContent = "ネガティブをコピー", 1400);
+}
