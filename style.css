@@ -185,3 +185,11 @@ body.lock{overflow:hidden}button,input{font:inherit}a{color:inherit}
 .gothic-bg-1{background:linear-gradient(145deg,#2a1520,#5e2439)}
 .gothic-bg-2{background:linear-gradient(145deg,#1d1825,#6a557f)}
 .gothic-bg-3{background:linear-gradient(145deg,#24131d,#7d3148)}
+
+
+.art-chatgpt{
+  background:
+    radial-gradient(circle at 76% 18%,rgba(202,184,235,.48),transparent 28%),
+    radial-gradient(circle at 18% 80%,rgba(132,205,187,.42),transparent 34%),
+    linear-gradient(135deg,#213b3d,#596f78 53%,#8d759e);
+}
