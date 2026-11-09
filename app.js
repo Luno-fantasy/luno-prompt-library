@@ -1,7 +1,11 @@
 let currentItem = null;
 let currentGender = "single";
+let promptTrigger = null;
+let savedScrollY = 0;
 
 function openPrompt(button){
+  promptTrigger = button;
+  savedScrollY = window.scrollY;
   currentItem = JSON.parse(button.dataset.prompt);
   currentGender = currentItem.male ? "female" : "single";
   document.getElementById("modalTitle").textContent = currentItem.title;
@@ -18,6 +22,14 @@ function openPrompt(button){
   updateModal();
   document.getElementById("promptModal").classList.add("open");
   document.body.classList.add("lock");
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.position = "fixed";
+  document.body.style.width = "100%";
+  document.querySelector("main").inert = true;
+  document.getElementById("promptModal").setAttribute("aria-hidden", "false");
+  document.querySelector(".modal-sheet").scrollTop = 0;
+  document.querySelector(".modal-close").focus();
+  syncGenderTabs();
 }
 
 function setGender(gender, button){
@@ -25,6 +37,7 @@ function setGender(gender, button){
   document.querySelectorAll("#genderTabs button").forEach(b => b.classList.remove("active"));
   button.classList.add("active");
   updateModal();
+  syncGenderTabs();
 }
 
 function updateModal(){
@@ -73,9 +86,24 @@ function updateModal(){
   }
 }
 
+function syncGenderTabs(){
+  document.querySelectorAll("#genderTabs button").forEach((button, index) => {
+    button.setAttribute("aria-pressed", String((index === 0 ? "female" : "male") === currentGender));
+  });
+}
+
 function closePrompt(){
-  document.getElementById("promptModal").classList.remove("open");
+  const modal = document.getElementById("promptModal");
+  if(!modal || !modal.classList.contains("open")) return;
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.querySelector("main").inert = false;
   document.body.classList.remove("lock");
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  window.scrollTo({top: savedScrollY, behavior: "instant"});
+  promptTrigger?.focus({preventScroll: true});
 }
 
 async function writeClipboard(text){
@@ -84,28 +112,35 @@ async function writeClipboard(text){
   }catch(error){
     const area = document.createElement("textarea");
     area.value = text;
-    document.body.appendChild(area);
+    area.setAttribute("aria-label", "コピー用テキスト");
+    area.style.cssText = "position:fixed;left:0;top:0;opacity:0;font-size:16px";
+    document.querySelector(".modal-sheet").appendChild(area);
     area.select();
-    document.execCommand("copy");
+    area.setSelectionRange(0, text.length);
+    const copied = document.execCommand("copy");
     area.remove();
+    if(!copied) throw new Error("Clipboard unavailable");
   }
 }
 
-async function copyPrompt(){
-  const text = document.getElementById("promptText").textContent;
-  const button = document.getElementById("copyButton");
-  await writeClipboard(text);
-  button.textContent = "Copied ✓";
-  setTimeout(() => button.textContent = "Promptをコピー", 1400);
+async function copyText(textId, buttonId){
+  const button = document.getElementById(buttonId);
+  const original = button.dataset.label || button.textContent;
+  button.dataset.label = original;
+  try{
+    await writeClipboard(document.getElementById(textId).textContent);
+    button.textContent = "Copied ✓";
+    announce.textContent = "コピーしました。";
+  }catch(error){
+    button.textContent = "コピーできませんでした。再試行";
+    announce.textContent = "コピーできませんでした。本文を選択してコピーしてください。";
+  }
+  clearTimeout(button.copyTimer);
+  button.copyTimer = setTimeout(() => {button.textContent = original; announce.textContent = "";}, 1600);
 }
-
-async function copyQualityTags(){
-  const text = document.getElementById("qualityText").textContent;
-  const button = document.getElementById("qualityCopyButton");
-  await writeClipboard(text);
-  button.textContent = "Copied ✓";
-  setTimeout(() => button.textContent = "品質タグをコピー", 1400);
-}
+function copyPrompt(){return copyText("promptText", "copyButton");}
+function copyQualityTags(){return copyText("qualityText", "qualityCopyButton");}
+function copyNegativeTags(){return copyText("negativeText", "negativeCopyButton");}
 
 function filterTiles(input){
   const query = input.value.trim().toLowerCase();
@@ -119,14 +154,18 @@ function filterTiles(input){
   if(emptyState) emptyState.style.display = visible ? "none" : "block";
 }
 
-document.addEventListener("keydown", event => {
-  if(event.key === "Escape") closePrompt();
-});
+const announce = document.createElement("div");
+announce.className = "sr-only";
+announce.setAttribute("role", "status");
+document.querySelector(".modal-sheet").appendChild(announce);
 
-async function copyNegativeTags(){
-  const text = document.getElementById("negativeText").textContent;
-  const button = document.getElementById("negativeCopyButton");
-  await writeClipboard(text);
-  button.textContent = "Copied ✓";
-  setTimeout(() => button.textContent = "ネガティブをコピー", 1400);
-}
+document.addEventListener("keydown", event => {
+  if(!document.getElementById("promptModal").classList.contains("open")) return;
+  if(event.key === "Escape") {event.preventDefault(); closePrompt();}
+  if(event.key === "Tab"){
+    const focusable = Array.from(document.querySelectorAll(".modal-sheet button, .modal-sheet [tabindex='0']")).filter(el => el.getClientRects().length);
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if(event.shiftKey && (document.activeElement === first || !focusable.includes(document.activeElement))){event.preventDefault(); last.focus();}
+    else if(!event.shiftKey && (document.activeElement === last || !focusable.includes(document.activeElement))){event.preventDefault(); first.focus();}
+  }
+});
