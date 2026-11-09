@@ -3,21 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f3eee8">
+<meta name="theme-color" content="#F4F0EA">
 <title>休日・カジュアル | Luno</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 <main class="shell">
-<header class="site-head">
-  <a class="brand" href="index.html">LUNO</a>
-  <a class="head-link" href="index.html">COLLECTIONS</a>
-</header>
+<header class="site-head"><a class="brand" href="index.html" aria-label="Luno Prompt Archive トップ"><span>LUNO</span><span class="brand-sub">ARCHIVE</span></a><a class="head-link" href="index.html#collections">COLLECTIONS <span aria-hidden="true">↗</span></a></header>
 
 <a class="back" href="index.html">Collections</a>
-<section class="collection-hero"><span class="eyebrow">Weekend Collection</span><h1>休日・カジュアル</h1><p>気を抜いた自然な服装と仕草。容姿プロンプトへ重ねやすい休日の構図。</p></section>
-<div class="toolbar"><input class="search" type="search" placeholder="タイトル・雰囲気から検索" oninput="filterTiles(this)"></div>
-<section class="gallery"><button class="prompt-tile" data-search="カフェで過ごす休日 Cafe / Knit / Afternoon casual oversized knit, white T-shirt, relaxed straight denim, sneakers, wristwatch, coffee cup, sitting by a cafe window, one arm resting on the table, gentle smile, looking outside, warm afternoon sunlight, candid photography" data-prompt="{&quot;title&quot;: &quot;カフェで過ごす休日&quot;, &quot;tag&quot;: &quot;Cafe / Knit / Afternoon&quot;, &quot;prompt&quot;: &quot;casual oversized knit, white T-shirt, relaxed straight denim, sneakers, wristwatch, coffee cup, sitting by a cafe window, one arm resting on the table, gentle smile, looking outside, warm afternoon sunlight, candid photography&quot;}" onclick="openPrompt(this)">
+<section class="collection-hero"><span class="eyebrow">COLLECTION 02 / 07</span><h1 lang="en">Weekend</h1><div class="collection-caption">休日・カジュアル<span>10 PROMPTS</span></div><p>気を抜いた自然な服装と仕草。容姿プロンプトへ重ねやすい休日の構図。</p></section>
+<div class="toolbar"><input class="search" aria-label="プロンプトを検索" type="search" placeholder="タイトル・雰囲気から検索" oninput="filterTiles(this)"></div>
+<section class="gallery" aria-label="プロンプト一覧"><button class="prompt-tile" data-search="カフェで過ごす休日 Cafe / Knit / Afternoon casual oversized knit, white T-shirt, relaxed straight denim, sneakers, wristwatch, coffee cup, sitting by a cafe window, one arm resting on the table, gentle smile, looking outside, warm afternoon sunlight, candid photography" data-prompt="{&quot;title&quot;: &quot;カフェで過ごす休日&quot;, &quot;tag&quot;: &quot;Cafe / Knit / Afternoon&quot;, &quot;prompt&quot;: &quot;casual oversized knit, white T-shirt, relaxed straight denim, sneakers, wristwatch, coffee cup, sitting by a cafe window, one arm resting on the table, gentle smile, looking outside, warm afternoon sunlight, candid photography&quot;}" onclick="openPrompt(this)">
       <div class="tile-visual"><div class="placeholder weekend-bg"><span>01</span></div></div>
       <div class="tile-title">カフェで過ごす休日</div>
       <div class="tile-tag">Cafe / Knit / Afternoon</div>
@@ -58,14 +55,14 @@
       <div class="tile-title">待ち合わせ</div>
       <div class="tile-tag">Station / Denim / Daytime</div>
     </button></section>
-<div class="empty" id="emptyState">該当するプロンプトがありません。</div>
+<div class="empty" id="emptyState" role="status">該当するプロンプトがありません。</div>
 
-<footer class="footer">LUNO PROMPT ARCHIVE — PRIVATE COLLECTION</footer>
+<footer class="footer"><a href="index.html">LUNO PROMPT ARCHIVE</a><span>A place for creative inspiration.</span><a href="#top">BACK TO TOP ↑</a></footer>
 </main>
 
-<div class="modal" id="promptModal">
+<div class="modal" id="promptModal" aria-hidden="true">
   <div class="modal-backdrop" onclick="closePrompt()"></div>
-  <section class="modal-sheet">
+  <section class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
     <div class="modal-grip"></div>
     <button class="modal-close" onclick="closePrompt()" aria-label="閉じる">×</button>
     <div class="modal-image-wrap"><img class="modal-image" id="modalImage" alt=""></div>
